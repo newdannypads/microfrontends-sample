@@ -11,11 +11,12 @@ export class AppComponent {
   constructor(public eventBusService: EventBusService){}
   inputBox;
   childData: string;
+  parentData:string =  'I am your father';
   onChildDataSend(data: string){
     this.childData = data;
   }
 
-  onClick(value){
-    this.eventBusService.emit(new EmitEvent(Events.onButtonClick, value));
+  onClick(){
+    this.eventBusService.emit(new EmitEvent(Events.onButtonClick, this.parentData));
   }
 }

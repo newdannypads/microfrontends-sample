@@ -8,6 +8,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 export class AppComponent {
   title = 'elements';
   @Input() name: string = 'internal';
+  @Input() dataFromParentViaEvent: string;
   @Output() buttonClick = new EventEmitter<string>();
 
   onClick() {

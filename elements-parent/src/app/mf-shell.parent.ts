@@ -1,13 +1,17 @@
 import {EventBusService} from './event-bus.service';
 import { Events, EmitEvent } from './register.events';
-import { OnInit, Input } from '@angular/core';
-class MicroFrontendSell implements OnInit {
-    @Input() eventDataFromParent;
+import { OnInit, Input, Component } from '@angular/core';
+
+@Component({
+    template: ''
+})
+export class MicroFrontendShell implements OnInit {
+    @Input() dataFromParentViaEvent;
     constructor(public eventBusService: EventBusService) {}
 
     ngOnInit(){
         this.eventBusService.on(Events.onButtonClick, (data) => {
-            this.eventDataFromParent = data;
+            this.dataFromParentViaEvent = data;
         })
     }
 }

@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MfWrapper1Component } from './mf-wrapper1/mf-wrapper1.component';
 import { MfWrapper2Component } from './mf-wrapper2/mf-wrapper2.component';
 import {EventBusService} from './event-bus.service';
+import { MicroFrontendShell} from './mf-shell.parent';
 
 
 @NgModule({
@@ -14,13 +15,13 @@ import {EventBusService} from './event-bus.service';
     AppComponent,
     MfWrapper1Component,
     MfWrapper2Component
-  ],
+    ],
   imports: [
     BrowserModule,
     LazyElementsModule,
     FormsModule
   ],
-  providers: [EventBusService],
+  providers: [EventBusService, MicroFrontendShell],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
