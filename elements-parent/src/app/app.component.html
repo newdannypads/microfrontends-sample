@@ -1,14 +1,22 @@
+<div>
+    <ul>
+        <li> <a routerLink='/mf1'>MicroFrontEnd 1</a></li>
+        <li> <a routerLink='/mf2'>MicroFrontEnd 2</a></li>
+    </ul>
+</div>
 <div style="border:1px solid blue;">
     <h2>Input sent to the child:</h2>
-    <input type="text" [(ngModel)]="inputBox">
+    <input type="text" (keyup)="onKeyUp($event)">
 
     <h2>Output received from the child</h2>
     {{ childData }}
     <br>
     <button type="button" (click)="onClick($event)">Send shared data</button>
 </div>
-<br>
+<!-- <br>
 <app-mf-wrapper2></app-mf-wrapper2>
 <br>
 <app-mf-wrapper1 [dataFromParent]="inputBox" (childDataSend)="onChildDataSend($event)"></app-mf-wrapper1>
-<br>
+<br> -->
+
+<router-outlet></router-outlet>

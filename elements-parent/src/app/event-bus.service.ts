@@ -11,6 +11,7 @@ export class EventBusService {
   private subject$ = new Subject<any>();
 
   on(event: Events, action: any): Subscription {
+    debugger;
        return this.subject$
         .pipe(
               filter((e: EmitEvent) => {
